@@ -45,20 +45,23 @@ pnpm dev
 - Acesse: http://localhost:3000
 
 - Login: qualquer usuário/senha
+  <br />
+  <br />
 
-# ⚙️ Decisões de Arquitetura
+## 🏛️ Decisões de Arquitetura
 
-## 📌 SSR vs SSG
+### - SSR vs SSG
 
 - `/login`: renderização local (CSR).
 
 - `/produtos`: renderização no cliente (CSR com dados locais).
 
 - `/produtos/[id]`: SSG com fallback 'blocking', por performance e SEO.
-
+  <br />
+  <br />
   Justificativa: produtos mudam pouco, estão em arquivo local, e o carregamento rápido é prioritário.
 
-## 🧠 Trade-offs
+### - Trade-offs
 
 | Decisão        | Vantagem                   | Trade-off                        |
 | -------------- | -------------------------- | -------------------------------- |
@@ -79,19 +82,13 @@ E2E: fluxo completo `login → produtos → logout`
 ## 🧠 Dúvidas levantadas
 
 - Qual o comportamento esperado ao acessar uma rota protegida após logout?
-
 - Deveríamos simular falha de login?
-
 - Como lidar com paginação se o JSON tiver poucos itens?
 
 ## 🔮 Próximos passos (produção)
 
 - Adicionar autenticação real com JWT
-
 - Armazenar produtos via API (não em JSON)
-
 - Melhorar acessibilidade (labels, roles)
-
 - Internacionalização (i18n)
-
 - Imagens otimizadas com next/image
