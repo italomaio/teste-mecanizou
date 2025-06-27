@@ -17,15 +17,19 @@ Projeto desenvolvido como parte do teste técnico para vaga de Frontend Sênior,
 
 ```bash
 src/
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── login/
-│   │   └── page.tsx
-│   ├── produtos/
-│   │   ├── page.tsx
-│   │   └── [id]/
-│   │       └── page.tsx
+app
+├── (secure)
+│  ├── products
+│  │  ├── [id]
+│  │  │  └── page.tsx
+│  │  └── page.tsx
+│  └── layout.tsx
+├── auth
+│  ├── login
+│  │  └── page.tsx
+│  └── layout.tsx
+└── layout.tsx
+├── assets/
 ├── components/
 ├── hooks/
 ├── utils/
