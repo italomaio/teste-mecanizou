@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "./custom.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-primary: var(--font-poppins);
+
+  --color-sapphire: oklch(44.283% 0.14923 273.15);
+  --color-sapphire-50: oklch(79.559% 0.06125 278.68);
+  --color-sapphire-100: oklch(75.378% 0.07373 278.39);
+  --color-sapphire-200: oklch(66.992% 0.10122 277.52);
+  --color-sapphire-300: oklch(58.634% 0.13143 276.06);
+  --color-sapphire-400: oklch(50.346% 0.16067 273.74);
+  --color-sapphire-500: oklch(44.283% 0.14923 273.15);
+  --color-sapphire-600: oklch(36.368% 0.11831 273.48);
+  --color-sapphire-700: oklch(27.92% 0.08357 274.1);
+  --color-sapphire-800: oklch(18.903% 0.04652 275.43);
+  --color-sapphire-900: oklch(0% 0 none);
+  --color-sapphire-950: oklch(0% 0 none);
+
+  --color-hot-cinnamon: oklch(64.424% 0.17719 44.666);
+  --color-hot-cinnamon-50: oklch(88.351% 0.05658 52.054);
+  --color-hot-cinnamon-100: oklch(85.291% 0.07222 51.409);
+  --color-hot-cinnamon-200: oklch(79.731% 0.10259 51.597);
+  --color-hot-cinnamon-300: oklch(74.416% 0.134 49.905);
+  --color-hot-cinnamon-400: oklch(69.431% 0.16216 47.635);
+  --color-hot-cinnamon-500: oklch(64.424% 0.17719 44.666);
+  --color-hot-cinnamon-600: oklch(53.429% 0.14438 45.111);
+  --color-hot-cinnamon-700: oklch(41.841% 0.10949 45.835);
+  --color-hot-cinnamon-800: oklch(29.402% 0.07137 47.388);
+  --color-hot-cinnamon-900: oklch(15.512% 0.02858 59.724);
+  --color-hot-cinnamon-950: oklch(0% 0 none);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-primary);
+}

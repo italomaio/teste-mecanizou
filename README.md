@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Catálogo Interativo – Teste Frontend Sênior
 
-## Getting Started
+Projeto desenvolvido como parte do teste técnico para vaga de Frontend Sênior, utilizando **Next.js (App Router)**, **TypeScript**, **Tailwind CSS** e **CI com testes automáticos**.
 
-First, run the development server:
+## 🚀 Stack e Ferramentas
+
+- [Next.js 14+ (App Router)](https://nextjs.org/docs/app)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Jest + React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Playwright ou Cypress](https://playwright.dev/)
+- [GitHub Actions](https://docs.github.com/actions) – Lint, typecheck e testes
+- Cookies para autenticação
+- Dark Mode com persistência
+
+## 🏗️ Estrutura de Pastas
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+app
+├── (secure)
+│  ├── products
+│  │  ├── [id]
+│  │  │  └── page.tsx
+│  │  └── page.tsx
+│  └── layout.tsx
+├── auth
+│  ├── login
+│  │  └── page.tsx
+│  └── layout.tsx
+└── layout.tsx
+├── assets/
+├── components/
+├── hooks/
+├── utils/
+├── data/
+├── lib/
+├── styles/
+├── tests/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Setup do Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Acesse: http://localhost:3000
 
-## Learn More
+- Login: qualquer usuário/senha
+  <br />
+  <br />
 
-To learn more about Next.js, take a look at the following resources:
+## 🏛️ Decisões de Arquitetura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### - SSR vs SSG
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/login`: renderização local (CSR).
 
-## Deploy on Vercel
+- `/produtos`: renderização no cliente (CSR com dados locais).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `/produtos/[id]`: SSG com fallback 'blocking', por performance e SEO.
+  <br />
+  <br />
+  Justificativa: produtos mudam pouco, estão em arquivo local, e o carregamento rápido é prioritário.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### - Trade-offs
+
+| Decisão        | Vantagem                   | Trade-off                        |
+| -------------- | -------------------------- | -------------------------------- |
+| SSG no detalhe | Performance                | Requer rebuild para mudanças     |
+| Tailwind       | Agilidade e acessibilidade | Curva de aprendizado no início   |
+| Cookie simples | Facilidade de uso          | Sem segurança real para produção |
+
+## 🧪 Testes
+
+Unitários:
+
+- `ProductCard`
+- `Login`
+- `useAuth`
+
+E2E: fluxo completo `login → produtos → logout`
+
+## 🧠 Dúvidas levantadas
+
+- Qual o comportamento esperado ao acessar uma rota protegida após logout?
+- Deveríamos simular falha de login?
+- Como lidar com paginação se o JSON tiver poucos itens?
+
+## 🔮 Próximos passos (produção)
+
+- Adicionar autenticação real com JWT
+- Armazenar produtos via API (não em JSON)
+- Melhorar acessibilidade (labels, roles)
+- Internacionalização (i18n)
+- Imagens otimizadas com next/image

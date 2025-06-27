@@ -1,0 +1,10 @@
+@tailwind utilities;
+
+@layer utilities {
+  /**
+    * Transitions
+  */
+  .scale-transition {
+    @apply hover:scale-105 transition-all duration-300 ease-in-out;
+  }
+}
