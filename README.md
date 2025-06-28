@@ -8,7 +8,8 @@ Projeto desenvolvido como parte do teste técnico para vaga de Frontend Sênior,
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Jest + React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- [Playwright ou Cypress](https://playwright.dev/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Playwright](https://playwright.dev/)
 - [GitHub Actions](https://docs.github.com/actions) – Lint, typecheck e testes
 - Cookies para autenticação
 - Dark Mode com persistência
@@ -37,6 +38,7 @@ app
 ├── lib/
 ├── styles/
 ├── tests/
+├── types/
 ```
 
 ## 📦 Setup do Projeto
@@ -48,7 +50,7 @@ pnpm dev
 
 - Acesse: http://localhost:3000
 
-- Login: qualquer usuário/senha
+- Login: qualquer email/senha
   <br />
   <br />
 
@@ -67,11 +69,12 @@ pnpm dev
 
 ### - Trade-offs
 
-| Decisão        | Vantagem                   | Trade-off                        |
-| -------------- | -------------------------- | -------------------------------- |
-| SSG no detalhe | Performance                | Requer rebuild para mudanças     |
-| Tailwind       | Agilidade e acessibilidade | Curva de aprendizado no início   |
-| Cookie simples | Facilidade de uso          | Sem segurança real para produção |
+| Decisão         | Vantagem                                       | Trade-off                        |
+| --------------- | ---------------------------------------------- | -------------------------------- |
+| SSG no detalhe  | Performance                                    | Requer rebuild para mudanças     |
+| Tailwind        | Agilidade e acessibilidade                     | Curva de aprendizado no início   |
+| Cookie simples  | Facilidade de uso                              | Sem segurança real para produção |
+| Hook Form + Zod | Facilidade de validação de dados de formulário | Aumento de complexidade          |
 
 ## 🧪 Testes
 
