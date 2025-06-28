@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Logo Component Should match the snapshot 1`] = `
+<DocumentFragment>
+  <img
+    alt="Logo mecanizou"
+    class="py-4 px-6 dark:invert scale-transition border border-white"
+    height="150"
+    src="test-file-stub"
+    width="150"
+  />
+</DocumentFragment>
+`;

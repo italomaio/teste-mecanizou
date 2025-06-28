@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Label Component Should match snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="inline-block p-0 mb-2 text-left font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-800 dark:text-white"
+  >
+    Test Label
+  </label>
+</DocumentFragment>
+`;
