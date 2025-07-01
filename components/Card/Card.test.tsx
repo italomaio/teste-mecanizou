@@ -27,7 +27,7 @@ describe("Card Component", () => {
   it("Should apply default styles", () => {
     const { container } = render(<Card />);
     expect(container.firstChild).toHaveClass(
-      "bg-white shadow-md rounded-md p-4 dark:bg-gray-800 dark:text-white"
+      "bg-white shadow-md rounded-md p-4 dark:bg-zinc-800 dark:text-white dark:border dark:border-zinc-700 dark:shadow-none"
     );
   });
 
