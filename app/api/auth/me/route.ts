@@ -9,10 +9,8 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const decoded = jwt.verify(authCookie.value, process.env.JWT_SECRET) as {
-      email: string;
-    };
-    return NextResponse.json({ user: { email: decoded.email } });
+    const decoded = jwt.verify(authCookie.value, process.env.JWT_SECRET);
+    return NextResponse.json({ user: decoded });
   } catch {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }

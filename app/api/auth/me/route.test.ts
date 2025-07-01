@@ -9,6 +9,7 @@ jest.mock("jsonwebtoken", () => ({
 describe("GET /api/auth/me", () => {
   const user = {
     email: "italomaio@gmail.com",
+    password: "123456",
   };
 
   beforeEach(() => {
