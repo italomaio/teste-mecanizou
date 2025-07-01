@@ -3,9 +3,10 @@ import { fireEvent, render, screen, waitFor } from "@/tests/utils";
 import { useTheme } from "next-themes";
 
 import ThemeToggle from "./ThemeToggle";
+import { ButtonProps } from "../Button/Button";
 
 jest.mock("@/components", () => ({
-  Button: ({ children, onClick, ...props }: any) => (
+  Button: ({ children, onClick, ...props }: ButtonProps) => (
     <button onClick={onClick} {...props}>
       {children}
     </button>
