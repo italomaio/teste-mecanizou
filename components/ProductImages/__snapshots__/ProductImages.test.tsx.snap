@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ProductImages Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row-reverse "
+  >
+    <div
+      class="relative w-full aspect-[16/9]"
+    >
+      <img
+        alt="Product Image"
+        aria-label="Current product image"
+        class="object-contain"
+        role="img"
+        src="/image1.jpg"
+      />
+    </div>
+    <div
+      class="flex flex-col gap-2"
+    >
+      <img
+        alt="Product Image"
+        aria-label="View image 1"
+        aria-pressed="true"
+        class="object-contain border border-gray-300 dark:border-zinc-700 p-2 rounded-sm cursor-pointer focus-visible-ring hover:dark:border-zinc-600 hover:dark:bg-zinc-700"
+        height="70"
+        role="button"
+        src="/image1.jpg"
+        width="70"
+      />
+      <img
+        alt="Product Image"
+        aria-label="View image 2"
+        aria-pressed="false"
+        class="object-contain border border-gray-300 dark:border-zinc-700 p-2 rounded-sm cursor-pointer focus-visible-ring hover:dark:border-zinc-600 hover:dark:bg-zinc-700"
+        height="70"
+        role="button"
+        src="/image2.jpg"
+        width="70"
+      />
+      <img
+        alt="Product Image"
+        aria-label="View image 3"
+        aria-pressed="false"
+        class="object-contain border border-gray-300 dark:border-zinc-700 p-2 rounded-sm cursor-pointer focus-visible-ring hover:dark:border-zinc-600 hover:dark:bg-zinc-700"
+        height="70"
+        role="button"
+        src="/image3.jpg"
+        width="70"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
