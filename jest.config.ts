@@ -27,7 +27,7 @@ const config: Config = {
   collectCoverage: true,
   coverageDirectory: "tests/coverage",
   coverageProvider: "v8",
-  setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.tsx"],
   moduleDirectories: ["./"],
   moduleNameMapper,
   extensionsToTreatAsEsm: [".ts", ".tsx"],
@@ -39,7 +39,7 @@ const config: Config = {
       displayName: "ui",
       testEnvironment: "jsdom",
       testMatch: ["<rootDir>/**/*.(test|spec).{ts,tsx}", "!**/app/api/**"],
-      setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.ts"],
+      setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.tsx"],
       transform: {
         "^.+\\.(ts|tsx|js|jsx)$": [
           "@swc/jest",

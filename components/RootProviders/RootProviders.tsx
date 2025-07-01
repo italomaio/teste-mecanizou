@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import dynamic from "next/dynamic";
 
@@ -14,16 +14,16 @@ type RootProvidersProps = {
 };
 
 const RootProviders: React.FC<RootProvidersProps> = ({ children }) => {
-  const [mounted, setMounted] = useState<boolean>(false);
+  // const [mounted, setMounted] = useState<boolean>(false);
 
-  useEffect(() => setMounted(true), []);
+  // // useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <>{children}</>;
+  // // if (!mounted) return <>{children}</>;
 
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="light"
+      defaultTheme="dark"
       themes={["light", "dark"]}
       enableSystem={false}
     >

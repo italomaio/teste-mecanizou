@@ -9,4 +9,19 @@
   .scale-transition {
     @apply hover:scale-105 transition-all duration-300 ease-in-out;
   }
+
+  /**
+    * Accessibility
+  */
+  .focus-visible-ring {
+    @apply focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 focus-visible:ring-zinc-600 focus-visible:rounded-sm;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

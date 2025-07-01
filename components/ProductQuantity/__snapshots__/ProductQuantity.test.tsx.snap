@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ProductQuantity Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="w-1/6 flex flex-col mb-[2px]"
+  >
+    <label
+      class="inline-block focus-visible-ring p-0 mb-2 text-left font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-800 dark:text-white"
+      for="qty"
+    >
+      Quantidade:
+    </label>
+    <input
+      aria-label="Quantity"
+      aria-required="true"
+      class="flex h-9 w-full rounded-sm bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sapphire text-gray-700 dark:text-zinc-100 border border-sapphire file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground"
+      id="qty"
+      min="10"
+      role="textbox"
+      type="number"
+      value="10"
+    />
+  </div>
+</DocumentFragment>
+`;

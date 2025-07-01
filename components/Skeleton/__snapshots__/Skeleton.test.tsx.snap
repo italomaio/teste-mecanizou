@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Skeleton Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="animate-pulse rounded-md bg-gray-200 dark:bg-zinc-400/10"
+  />
+</DocumentFragment>
+`;

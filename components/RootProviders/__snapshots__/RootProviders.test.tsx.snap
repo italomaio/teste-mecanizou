@@ -4,7 +4,7 @@ exports[`RootProviders Should match snapshot 1`] = `
 <DocumentFragment>
   <div
     data-attribute="class"
-    data-default-theme="light"
+    data-default-theme="dark"
     data-enable-system="false"
     data-testid="mock-theme-provider"
     data-themes="["light","dark"]"
