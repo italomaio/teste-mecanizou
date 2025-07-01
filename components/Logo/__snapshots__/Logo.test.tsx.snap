@@ -4,7 +4,7 @@ exports[`Logo Component Should match the snapshot 1`] = `
 <DocumentFragment>
   <img
     alt="Logo mecanizou"
-    class="py-4 px-6 dark:invert scale-transition border border-white"
+    class="py-4 px-6 scale-transition border border-white"
     height="150"
     src="test-file-stub"
     width="150"

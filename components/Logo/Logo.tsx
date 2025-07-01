@@ -21,7 +21,7 @@ const Logo: React.FC<LogoProps> = ({
       alt="Logo mecanizou"
       width={150}
       height={150}
-      className={cn("py-4 px-6 dark:invert", className, {
+      className={cn("py-4 px-6", className, {
         "scale-transition": animate,
         "border border-white": bordered,
       })}
