@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ProductLink Should match snapshot 1`] = `
+<DocumentFragment>
+  <a
+    aria-label="View product 1"
+    class="focus-visible-ring flex flex-col"
+    href="/products/1"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
