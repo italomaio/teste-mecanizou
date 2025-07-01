@@ -10,10 +10,12 @@ export const productsService = {
     const queryString = new URLSearchParams(
       data as Record<string, string>
     ).toString();
+
     const result = await api.get<ProductsResponse>(
-      `/products?` + queryString,
+      `/products` + `${queryString && "?" + queryString}`,
       opts
     );
+
     return result;
   },
   getById: async (id: string, opts?: RequestInit) => {
