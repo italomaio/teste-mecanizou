@@ -30,6 +30,18 @@ app
 │  │  └── page.tsx
 │  └── layout.tsx
 └── layout.tsx
+api
+├── auth
+│  ├── login
+│  │  └── route.ts
+│  ├── logout
+│  │  └── route.ts
+│  └── me
+│     └── route.ts
+└── products
+   ├── [id]
+   │  └── route.ts
+   └── route.ts
 ├── assets/
 ├── components/
 ├── hooks/
@@ -40,6 +52,10 @@ app
 ├── tests/
 ├── types/
 ```
+
+## 🌐 Deploy
+
+Acesse a aplicação em produção: [test-mecanizou na Vercel](https://teste-mecanizou-fawn.vercel.app/)
 
 ## 📦 Setup do Projeto
 
@@ -62,10 +78,10 @@ pnpm dev
 
 - `/produtos`: renderização no cliente (CSR com dados locais).
 
-- `/produtos/[id]`: SSG com fallback 'blocking', por performance e SEO.
+- `/produtos/[id]`: SSG / ISR com fallback 'blocking', por performance e cache.
   <br />
   <br />
-  Justificativa: produtos mudam pouco, estão em arquivo local, e o carregamento rápido é prioritário.
+  Justificativa: produtos mudam pouco, basicamente mudam os reviews e refinamento de características do produto (sendo coberto pelo ISR)
 
 ### - Trade-offs
 
@@ -78,19 +94,7 @@ pnpm dev
 
 ## 🧪 Testes
 
-Unitários:
-
-- `ProductCard`
-- `Login`
-- `useAuth`
-
-E2E: fluxo completo `login → produtos → logout`
-
-## 🧠 Dúvidas levantadas
-
-- Qual o comportamento esperado ao acessar uma rota protegida após logout?
-- Deveríamos simular falha de login?
-- Como lidar com paginação se o JSON tiver poucos itens?
+E2E: fluxo completo `login → produtos → produto → logout`
 
 ## 🔮 Próximos passos (produção)
 
