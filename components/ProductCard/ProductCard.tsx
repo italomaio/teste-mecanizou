@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const router = useRouter();
   return (
     <Card>
-      <article>
+      <article className="flex flex-col h-full">
         <figure className="aspect-square flex items-center">
           <ProductLink
             productId={product.id.toString()}
@@ -44,15 +44,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               {product.title}
             </Label>
           </ProductLink>
+        </header>
 
+        <div className="flex flex-col items-start py-4 mt-auto">
           <ProductRating
             productId={product.id.toString()}
             rating={product.rating}
             reviewsCount={product.reviews.length}
           />
-        </header>
 
-        <div className="flex flex-col items-start py-4 content-end">
           <ProductPrices
             price={product.price}
             discount={product.discountPercentage}
