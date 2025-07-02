@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:e2e": "pnpm exec playwright test",
+    "test:e2e:ui": "pnpm exec playwright test --ui"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.13",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.53.2",
     "@swc/jest": "^0.2.38",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.0",
