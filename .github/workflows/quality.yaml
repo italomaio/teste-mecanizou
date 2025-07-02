@@ -67,27 +67,3 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-  deploy:
-    name: 🚀 Deploy to vercel
-    runs-on: ubuntu-latest
-    environment: Mecanizou
-    needs: e2e-tests
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Vercel Login
-        run: vercel login --token ${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy para o Vercel
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: |
-          vercel pull --yes --environment=production --token $VERCEL_TOKEN
-          vercel build --prod --token $VERCEL_TOKEN
-          vercel deploy --prebuilt --prod --token $VERCEL_TOKEN
