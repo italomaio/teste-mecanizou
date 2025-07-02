@@ -36,40 +36,67 @@ const LoginPage: React.FC = () => {
     [router]
   );
 
+  const hasErrors = Object.keys(errors).length > 0;
+
   return (
-    <div className="flex flex-col space-y-2.5 justify-center items-center">
+    <main
+      className="flex flex-col space-y-2.5 justify-center items-center"
+      role="main"
+    >
       <Logo />
-      <h4 className="text-white font-thin">Your plate. Your parts.</h4>
+      <h1 className="text-white font-thin text-lg">Your plate. Your parts.</h1>
       <Card className="min-w-sm p-6">
         <form
-          className="flex flex-col space-y-4 "
+          className="flex flex-col space-y-4"
           onSubmit={handleSubmit(onFormSubmit)}
+          aria-label="Login form"
+          noValidate
         >
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
+            type="email"
             placeholder="example@mail.com"
+            aria-describedby={errors.email ? "email-error" : undefined}
+            aria-invalid={!!errors.email}
             {...register("email")}
           />
+
           <Label htmlFor="password">Password</Label>
           <PasswordInput
             id="password"
             placeholder="* * * *"
+            aria-describedby={errors.password ? "password-error" : undefined}
+            aria-invalid={!!errors.password}
             {...register("password")}
           />
-          <div className="text-red-400">
-            <ul className="list-disc text-xs list-inside">
-              {Object.values(errors).map((error, index) => (
-                <li key={index}>{error.message}</li>
-              ))}
-            </ul>
-          </div>
-          <Button variant="secondary" type="submit">
+
+          {hasErrors && (
+            <div
+              className="text-red-400"
+              role="alert"
+              aria-live="polite"
+              aria-atomic="true"
+              aria-label="Login form errors"
+            >
+              <ul className="list-disc text-xs list-inside space-y-1">
+                {Object.values(errors).map((error, index) => (
+                  <li key={`error-${index}`}>{error.message}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <Button
+            variant="secondary"
+            type="submit"
+            aria-describedby={hasErrors ? "form-errors" : undefined}
+          >
             Login
           </Button>
         </form>
       </Card>
-    </div>
+    </main>
   );
 };
 
