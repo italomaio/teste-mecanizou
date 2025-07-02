@@ -33,12 +33,17 @@ const config: Config = {
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   transformIgnorePatterns: [
     "/node_modules/(?!next|react|react-dom|@next|@react|next-test-api-route-handler|lodash-es|@internationalized|react-aria|@react-aria|@react-stately|@react-types)/",
+    "/tests/e2e/",
   ],
   projects: [
     {
       displayName: "ui",
       testEnvironment: "jsdom",
-      testMatch: ["<rootDir>/**/*.(test|spec).{ts,tsx}", "!**/app/api/**"],
+      testMatch: [
+        "<rootDir>/**/*.(test|spec).{ts,tsx}",
+        "!**/app/api/**",
+        "!**/e2e/**",
+      ],
       setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.tsx"],
       transform: {
         "^.+\\.(ts|tsx|js|jsx)$": [
@@ -59,7 +64,7 @@ const config: Config = {
     {
       displayName: "api",
       testEnvironment: "node",
-      testMatch: ["<rootDir>/app/api/**/*.(test|spec).{ts,tsx}"],
+      testMatch: ["<rootDir>/app/api/**/*.(test|spec).{ts,tsx}", "!**/e2e/**"],
       transform: {
         "^.+\\.(ts|tsx|js|jsx)$": ["@swc/jest"],
       },
