@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
+const isProd = process.env.NODE_ENV === "production";
+const isE2E = !!process.env.PLAYWRIGHT;
+
 export async function POST(request: Request) {
   const { email, password } = await request.json();
 
@@ -18,7 +21,8 @@ export async function POST(request: Request) {
     name: "token",
     value: token,
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProd && !isE2E,
+    // secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24,

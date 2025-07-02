@@ -20,6 +20,7 @@ test("Should login, navigate to products, open a product and logout", async ({
   await page.getByRole("textbox", { name: "password" }).fill("123456");
   await page.getByRole("button", { name: "Login" }).click();
 
+  await page.waitForURL(/products/);
   await expect(page).toHaveURL(/products/);
 
   await page.waitForLoadState("networkidle");
@@ -43,5 +44,6 @@ test("Should login, navigate to products, open a product and logout", async ({
   await expect(logoutOption).toBeVisible();
 
   await logoutOption.click();
-  await expect(page).toHaveURL(/auth/);
+  await page.waitForLoadState("networkidle");
+  await expect(page).toHaveURL(/auth/i);
 });
